@@ -14,6 +14,7 @@ html{
 
 body{
     font-family:'Poppins',sans-serif;
+    body{
     font-family:'Poppins',sans-serif;
 
     background:
@@ -1695,27 +1696,25 @@ HAMBURGER PREMIUM
 
 
 
-/* ===== FINAL RESPONSIVE ===== */
+/* ===== RESPONSIVE FIX ===== */
 @media (max-width:768px){
-nav{padding:12px 16px!important;flex-wrap:wrap;}
-.logo{font-size:18px!important}
-.menu-toggle{display:block!important;z-index:99999}
-nav ul{position:fixed;top:70px;right:-100%;width:240px;height:calc(100vh - 70px);background:#081426;display:flex;flex-direction:column;gap:20px;padding:25px;transition:.3s;z-index:99998}
-nav ul.active{right:0}
-.hero{min-height:100vh}
-.hero-content{width:92%!important;padding:0 10px}
-.hero-content h1{font-size:38px!important;line-height:1.2}
-.hero-content p{font-size:15px!important}
-.btn{padding:12px 18px!important;font-size:14px}
-.info-grid,.contact-grid{grid-template-columns:1fr!important}
-.gallery{grid-template-columns:repeat(2,1fr)!important;gap:10px}
-.gallery img{height:150px!important}
-.calendar{max-width:100%!important}
-.days{gap:4px}
-.days .day{min-height:60px}
-.map-box iframe{height:280px!important}
-section{padding:60px 18px!important}
-.wa-button{transform:scale(.8);left:10px;bottom:15px}
-.chat-toggle{right:12px;bottom:15px}
-.chat-box{width:94%!important;right:3%!important}
+body{overflow-x:hidden;}
+nav{padding:12px 16px;}
+.logo{font-size:18px;}
+.hero{min-height:100vh;padding:90px 20px 40px;}
+.hero-content{width:100%;max-width:100%;text-align:center;}
+.hero-content h1{font-size:36px;line-height:1.2;}
+.hero-content p{font-size:15px;}
+.btn{padding:10px 18px;font-size:14px;}
+.info-grid,.contact-grid{display:grid;grid-template-columns:1fr;gap:16px;}
+.gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;}
+.gallery img{height:140px;object-fit:cover;}
+.calendar{max-width:100%;overflow-x:auto;}
+.weekdays,.days{display:grid;grid-template-columns:repeat(7,minmax(40px,1fr));}
+.days .day{min-height:68px;font-size:12px;}
+.month h3{font-size:18px;}
+.map-box iframe{height:280px;}
+.wa-button{transform:scale(.85);left:10px;bottom:15px;}
+.chat-toggle{right:10px;bottom:15px;}
+.chat-box{width:92%;right:4%;bottom:70px;}
 }
