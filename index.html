@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Resmi RT 03 RW 01 Desa Bayu Dusun Plantaran</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<!-- ================= BACKGROUND ================= -->
+
+<canvas id="particles"></canvas>
+
+<nav>
+        <div class="logo">
+            RT 03 RW 01
+        </div>
+
+        <div class="menu-toggle" id="menuToggle">
+    ☰
+</div>
+
+        <ul id="navMenu">
+    <li><a href="#home">Beranda</a></li>
+    <li><a href="#pengumuman">Pengumuman</a></li>
+    <li><a href="#galeri">Galeri</a></li>
+    <li><a href="#kontak">Kontak</a></li>
+</ul>
+    </nav>
+
+<section class="hero" id="home">
+
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="drone.mp4" type="video/mp4">
+    </video>
+    <div class="background-3d"></div>
+    <div class="overlay"></div>
+
+    
+
+    <div class="hero-content">
+
+        <h1>
+           RT 03 Digital Website <br>
+         
+        </h1>
+
+        <p>
+            Selamat datang di Website Resmi RT 03 RW 01 Desa Bayu Dusun Plantaran
+            Media informasi, pengumuman dan dokumentasi kegiatan warga.
+        </p>
+
+        <a href="#pengumuman" class="btn">
+            Lihat Pengumuman
+        </a>
+
+        <a href="#kontak" class="btn">
+            kontak 
+        </a>
+
+    </div>
+
+
+
+</section>
+
+<!-- ================= PENGUMUMAN ================= -->
+
+<section class="pengumuman" id="pengumuman">
+
+<h2>Pengumuman</h2>
+
+<div class="card">
+
+<h3>Belum Ada Pengumuman</h3>
+
+<p>
+Jika terdapat informasi penting,
+pengumuman akan ditampilkan di sini.
+</p>
+
+</div>
+
+</section>
+
+<section class="info-section">
+
+    <h2>Informasi Hari Ini</h2>
+
+    <div class="info-grid">
+
+        <div class="info-card">
+            <h3>🕒 Jam Digital</h3>
+            <div id="clock" class="big-text">00:00:00</div>
+        </div>
+
+        <div class="info-card">
+            <h3>🌤 Cuaca</h3>
+
+            <div id="weather-icon" class="weather-icon">☁️</div>
+
+            <div id="temperature" class="big-text">--°C</div>
+
+            <p id="weather-desc">Memuat...</p>
+
+            <small>Desa Bayu, Songgon</small>
+        </div>
+
+        <div class="info-card">
+
+            <h3>🕌 Jadwal Sholat</h3>
+
+            <div class="sholat-list">
+
+                <p>🌅 Subuh <span id="subuh">--:--</span></p>
+
+                <p>☀ Dzuhur <span id="dzuhur">--:--</span></p>
+
+                <p>🌤 Ashar <span id="ashar">--:--</span></p>
+
+                <p>🌇 Maghrib <span id="maghrib">--:--</span></p>
+
+                <p>🌙 Isya <span id="isya">--:--</span></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= KALENDER ================= -->
+
+<section class="kalender">
+
+    <h2>Kalender</h2>
+
+    <p class="today-text">
+        <span id="today"></span>
+    </p>
+
+    <div class="calendar">
+
+        <div class="month">
+            <button id="prev">&#10094;</button>
+
+            <h3 id="month-year"></h3>
+            <h3 id="month-year"></h3>
+
+<p id="islamic-date" class="islamic-date"></p>
+
+            <button id="next">&#10095;</button>
+        </div>
+
+        <div class="weekdays">
+            <div>Min</div>
+            <div>Sen</div>
+            <div>Sel</div>
+            <div>Rab</div>
+            <div>Kam</div>
+            <div>Jum</div>
+            <div>Sab</div>
+        </div>
+
+        <div id="calendar-days" class="days"></div>
+
+    </div>
+
+</section>
+
+<!-- ================= GALERI ================= -->
+
+<section class="galeri" id="galeri">
+
+<h2>Galeri</h2>
+
+<div class="gallery">
+
+<img src="images-1.jpg">
+<img src="images-2.jpg">
+<img src="images-3.jpg">
+<img src="images-4.jpg">
+<img src="images-5.jpg">
+<img src="images-6.jpg">
+<img src="images-7.jpg">
+<img src="images-8.jpg">
+
+
+</div>
+
+
+
+<div class="gallery-drive">
+
+
+
+    <a href="https://drive.google.com/drive/folders/1oFTRdYETXfmjccnB-z8v7i8ygO1KHhmb"
+       target="_blank"
+       class="drive-btn">
+
+        📁 Galeri Lengkap
+
+    </a>
+
+</div>
+
+</section>
+
+
+<!-- ================= MAP ================= -->
+
+<section class="map-section">
+
+    <h2>Lokasi RT</h2>
+
+    <div class="map-box">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3948.815819650923!2d114.1962881!3d-8.2212693!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd14d9cbda19e7d%3A0xd2bcfb73b991a4f7!2sKantor%20Desa%20Bayu%2Ckec%20Songgon%20%2Cbanyuwangi!5e0!3m2!1sid!2sid!4v1782916593473!5m2!1sid!2sid"
+        style="border:0;width:100%;height:500px;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+    <div class="map-info">
+
+        <h3>📍 RT 03 RW 01</h3>
+
+        <p>
+            Desa Bayu<br>
+            Dusun Plantaran<br>
+            Jalan Perkebunan Bumisari<br>
+            Kecamatan Songgon<br>
+            Kabupaten Banyuwangi
+        </p>
+
+        <a href="https://www.google.com/maps/search/?api=1&query=Kantor+Desa+Bayu+Songgon+Banyuwangi"
+   target="_blank"
+   class="btn">
+    📍 Buka Google Maps
+</a>
+
+    </div>
+
+</section>
+
+<!-- ================= KONTAK ================= -->
+
+<section class="kontak" id="kontak">
+
+    <h2>Kontak Penting</h2>
+
+    <p class="sub-title">
+        Hubungi perangkat desa apabila membutuhkan informasi atau pelayanan.
+    </p>
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+            <h3>Kepala Desa</h3>
+            <p>Bu Yulia</p>
+            <a href="https://wa.me/6285748655257" target="_blank">
+                Hubungi WhatsApp
+            </a>
+        </div>
+
+        <div class="contact-card">
+            <h3>Kepala Dusun</h3>
+            <p>Pak Sriyono</p>
+            <a href="https://wa.me/62 82337166979" target="_blank">
+                Hubungi WhatsApp
+            </a>
+        </div>
+
+        <div class="contact-card">
+            <h3>Ketua RW</h3>
+            <p>Pak Ribut</p>
+            <a href="https://wa.me/62 85748856764" target="_blank">
+                Hubungi WhatsApp
+            </a>
+        </div>
+
+        <div class="contact-card">
+            <h3>Ketua RT</h3>
+            <p>Pak Masruro</p>
+            <a href="https://wa.me/62 85718754157" target="_blank">
+                Hubungi WhatsApp
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 Website Resmi RT 03 RW 01 Desa Bayu Dusun Plantaran
+</p>
+
+</footer>
+
+<!-- ================= WHATSAPP ================= -->
+
+<a href="https://chat.whatsapp.com/CaApZpuCTPoKR91ga7jqS0"
+target="_blank"
+class="wa-button">
+
+<i class="fab fa-whatsapp"></i>
+
+<span>Gabung Grup WA</span>
+
+</a>
+
+
+
+
+<!-- ================= CHATBOT ================= -->
+
+<div class="chat-toggle" id="chatToggle">
+    💬
+</div>
+
+<div class="chat-box" id="chatBox">
+
+    <div class="chat-header">
+        🤖 Asisten RT
+    </div>
+
+    <div class="chat-body" id="chatBody">
+
+        <div class="bot-msg">
+            Halo 👋<br>
+            Ada yang bisa saya bantu?
+        </div>
+
+    </div>
+
+    <div class="chat-input">
+
+        <input
+            type="text"
+            id="chatInput"
+            placeholder="Tulis pesan..."
+        >
+
+        <button id="sendChat">
+            Kirim
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+<script src="chatbot.js"></script>
+
+</body>
+</html>
+

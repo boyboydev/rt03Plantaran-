@@ -1,0 +1,1696 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    body{
+    font-family:'Poppins',sans-serif;
+
+    background:
+    radial-gradient(circle at top left,#0ea5e9 0%,transparent 30%),
+    radial-gradient(circle at bottom right,#7c3aed 0%,transparent 35%),
+    linear-gradient(180deg,#020617,#071426,#020617);
+
+    color:#fff;
+
+    overflow-x:hidden;
+}
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* =========================
+BACKGROUND
+========================= */
+
+#particles{
+    position:fixed;
+    inset:0;
+    width:100%;
+    height:100%;
+    z-index:-3;
+}
+
+.bg-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+}
+
+.overlay{
+    background:rgba(0,0,0,.25);
+}
+
+/* =========================
+   NAVBAR PREMIUM
+========================= */
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 18px 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(10,15,35,.75);
+    backdrop-filter: blur(12px);
+
+    z-index: 99999;
+}
+
+nav.scrolled{
+
+    background:rgba(5,15,35,.75);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+
+}
+
+/* Logo */
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#fff;
+
+    letter-spacing:1px;
+
+    transition:.3s;
+
+}
+
+.logo:hover{
+
+    color:#38BDF8;
+
+    text-shadow:0 0 18px #38BDF8;
+
+}
+
+/* Menu */
+
+nav ul{
+
+    display:flex;
+
+    list-style:none;
+
+    gap:18px;
+
+    margin:0;
+
+    padding:0;
+
+}
+
+/* Tombol */
+
+nav ul li a{
+
+    position:relative;
+
+    display:block;
+
+    padding:12px 24px;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    border-radius:50px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    backdrop-filter:blur(12px);
+
+    transition:.35s;
+
+    overflow:hidden;
+
+}
+
+/* Efek cahaya berjalan */
+
+nav ul li a::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.55),
+        transparent
+    );
+
+    transition:.6s;
+
+}
+
+/* Hover */
+
+nav ul li a:hover{
+
+    background:linear-gradient(135deg,#0EA5E9,#2563EB);
+
+    transform:translateY(-4px);
+
+    box-shadow:
+        0 10px 25px rgba(14,165,233,.45),
+        0 0 20px rgba(56,189,248,.35);
+
+}
+
+nav ul li a:hover::before{
+
+    left:150%;
+
+}
+
+/* Klik */
+
+nav ul li a:active{
+
+    transform:scale(.95);
+
+}
+
+/* =========================
+HERO
+========================= */
+
+.hero{
+    position:relative;
+    width:100%;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    max-width:850px;
+    padding:20px;
+}
+
+.hero-content h1{
+    font-size:68px;
+    line-height:1.1;
+    margin-bottom:25px;
+    text-shadow:0 0 30px rgba(0,255,255,.4);
+}
+
+.hero-content p{
+    font-size:19px;
+    color:#ddd;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+/* =========================
+   HERO BUTTON PREMIUM
+========================= */
+
+.btn{
+
+    position:relative;
+
+    display:inline-block;
+
+    padding:16px 36px;
+
+    margin:10px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    letter-spacing:.5px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.12);
+
+    backdrop-filter:blur(12px);
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.25);
+
+}
+
+/* Cahaya berjalan */
+
+.btn::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:60%;
+
+    height:100%;
+
+    background:linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,.55),
+        transparent
+    );
+
+    transition:.7s;
+
+}
+
+/* Hover */
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+    background:linear-gradient(135deg,#0EA5E9,#2563EB);
+
+    box-shadow:
+        0 15px 35px rgba(14,165,233,.45),
+        0 0 25px rgba(56,189,248,.35);
+
+}
+
+/* Cahaya bergerak */
+
+.btn:hover::before{
+
+    left:160%;
+
+}
+
+/* Klik */
+
+.btn:active{
+
+    transform:scale(.96);
+
+}
+
+.bg-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:0;
+
+    transform:scale(1.1);
+    animation:heroZoom 30s linear infinite alternate;
+}
+
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        to bottom,
+        rgba(0,0,0,.25),
+        rgba(0,0,0,.55)
+    );
+    z-index:1;
+}
+
+
+
+
+.overlay{
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    z-index:1;
+}
+
+/* =========================
+SECTION
+========================= */
+
+section{
+    padding:100px 9%;
+    position:relative;
+    z-index:5;
+}
+
+section h2{
+    font-size:42px;
+    text-align:center;
+    margin-bottom:50px;
+}
+
+/* =========================
+CARD
+========================= */
+
+.card,
+.contact-card{
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:35px;
+
+    max-width:900px;
+
+    margin:auto;
+
+    transition:.4s;
+
+}
+
+.card:hover,
+.contact-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+
+}
+
+/* =========================
+GALERI
+========================= */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.gallery img{
+    width:100%;
+    height:240px;
+    object-fit:cover;
+    border-radius:18px;
+    cursor:pointer;
+    transition:.45s;
+    border:2px solid rgba(255,255,255,.1);
+}
+
+.gallery img:hover{
+    transform:scale(1.06);
+    box-shadow:0 15px 40px rgba(0,255,255,.25);
+}
+
+/* =========================
+KONTAK
+========================= */
+
+.contact-card{
+    text-align:center;
+    line-height:2;
+    font-size:18px;
+}
+
+.contact-card strong{
+    color:#38BDF8;
+}
+
+/* =========================
+FOOTER
+========================= */
+
+footer{
+    background:#06111f;
+    text-align:center;
+    padding:30px;
+    color:#bbb;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* =========================
+ANIMASI MUNCUL
+========================= */
+
+.card,
+.gallery img,
+.contact-card{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all .8s ease;
+}
+
+.show{
+    opacity:1 !important;
+    transform:translateY(0) !important;
+}
+
+@media(max-width:768px){
+
+.menu-toggle{
+    display:block;
+}
+
+nav{
+
+    padding:15px 20px;
+
+}
+
+nav ul{
+
+    position:fixed;
+
+    top:75px;
+
+    left:0;
+
+    width:100%;
+
+    background:rgba(5,15,35,.95);
+
+    backdrop-filter:blur(18px);
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:30px 0;
+
+    transform:translateY(-120%);
+
+    opacity:0;
+
+    transition:.45s;
+
+    z-index:9998;
+
+}
+
+nav ul.active{
+
+    transform:translateY(0);
+
+    opacity:1;
+
+}
+
+nav ul li{
+
+    width:90%;
+
+}
+
+nav ul li a{
+
+    display:block;
+
+    text-align:center;
+
+    padding:15px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.05);
+
+    transition:.3s;
+
+}
+
+nav ul li a:hover{
+
+    background:#0EA5E9;
+
+    transform:translateY(-3px);
+
+}
+
+}
+
+/* =========================
+   KONTAK
+========================= */
+
+.sub-title{
+    text-align:center;
+    color:#ddd;
+    margin-top:-25px;
+    margin-bottom:45px;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.contact-card{
+    text-align:center;
+}
+
+.contact-card h3{
+    margin-bottom:10px;
+    color:#38BDF8;
+}
+
+.contact-card p{
+    color:#ddd;
+    margin-bottom:20px;
+}
+
+.contact-card a{
+    display:inline-block;
+    padding:12px 24px;
+    background:#0EA5E9;
+    color:#fff;
+    text-decoration:none;
+    border-radius:30px;
+    transition:.3s;
+}
+
+.contact-card a:hover{
+    background:#38BDF8;
+    transform:translateY(-3px);
+}
+
+/* =====================
+KALENDER
+===================== */
+
+.calendar{
+
+    max-width:900px;
+    margin:auto;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.month{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px;
+
+    background:#0EA5E9;
+
+}
+
+.month h3{
+
+    font-size:24px;
+
+}
+
+.month button{
+
+    width:45px;
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    cursor:pointer;
+
+    background:#fff;
+
+    font-size:20px;
+
+}
+
+.weekdays{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    text-align:center;
+
+    padding:20px;
+
+    background:#081C3B;
+
+    font-weight:600;
+
+}
+
+.days{
+
+    display:grid;
+
+    grid-template-columns:repeat(7,1fr);
+
+    gap:8px;
+
+    padding:20px;
+
+}
+
+.days div{
+
+    height:70px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.05);
+
+    transition:.3s;
+
+}
+
+.days div:hover{
+
+    background:#0EA5E9;
+
+}
+
+.today{
+
+    background:#00E5FF !important;
+
+    color:#000;
+
+    font-weight:bold;
+
+    box-shadow:0 0 30px #00E5FF;
+
+    animation:pulse 2s infinite;
+
+}
+
+.today .date-number{
+    color:#000;
+}
+
+.today .pasaran{
+    color:#003344;
+    font-weight:700;
+}
+
+.other-month{
+
+    opacity:.3;
+
+}
+
+.today-text{
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    color:#ddd;
+
+}
+
+@keyframes pulse{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+.islamic-date{
+
+    text-align:center;
+
+    margin-top:8px;
+
+    font-size:17px;
+
+    color:#B8F3FF;
+
+    letter-spacing:1px;
+
+    font-weight:500;
+
+}
+
+.days .day{
+
+    height:75px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:4px;
+
+}
+
+.days small{
+
+    margin-top:6px;
+
+    font-size:12px;
+
+    color:#8DEBFF;
+
+    font-weight:500;
+
+}
+
+.date-number{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    line-height:1;
+
+}
+
+.pasaran{
+
+    font-size:11px;
+
+    color:#8DEBFF;
+
+    font-weight:500;
+
+    line-height:1;
+
+}
+
+/*=========================
+INFORMASI HARI INI
+=========================*/
+
+.info-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:25px;
+
+margin-top:40px;
+
+}
+
+.info-card{
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border:1px solid rgba(255,255,255,.1);
+
+border-radius:20px;
+
+padding:30px;
+
+text-align:center;
+
+transition:.35s;
+
+}
+
+.info-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(0,255,255,.2);
+
+}
+
+.big-text{
+
+font-size:38px;
+
+font-weight:bold;
+
+margin:20px 0;
+
+color:#5EEBFF;
+
+}
+
+.weather-icon{
+
+font-size:55px;
+
+margin-top:15px;
+
+}
+
+.sholat-list{
+
+margin-top:15px;
+
+text-align:left;
+
+}
+
+.sholat-list p{
+
+display:flex;
+
+justify-content:space-between;
+
+padding:10px 0;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.sholat-list span{
+
+font-weight:bold;
+
+color:#5EEBFF;
+
+}
+
+/* =========================
+BACKGROUND 3D
+========================= */
+
+body{
+    background:
+        radial-gradient(circle at 15% 20%, rgba(0,255,255,.12), transparent 35%),
+        radial-gradient(circle at 85% 80%, rgba(124,58,237,.15), transparent 35%),
+        linear-gradient(180deg,#020817,#08182F,#020817);
+}
+
+/* Aurora kiri */
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:700px;
+    height:700px;
+
+    left:-250px;
+    top:150px;
+
+    border-radius:50%;
+
+    background:radial-gradient(circle,#00E5FF,transparent 70%);
+
+    filter:blur(140px);
+
+    opacity:.18;
+
+    animation:auroraLeft 18s ease-in-out infinite alternate;
+
+    z-index:-2;
+
+    pointer-events:none;
+
+}
+
+.background-3d{
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+/* =========================
+MAP
+========================= */
+
+.map-section{
+
+    padding:100px 8%;
+
+    text-align:center;
+
+}
+
+.map-box{
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    border:1px solid rgba(255,255,255,.1);
+
+    box-shadow:0 20px 60px rgba(0,0,0,.35);
+
+    margin:40px auto;
+
+    max-width:1100px;
+
+}
+
+.map-box iframe{
+
+    width:100%;
+
+    height:500px;
+
+    border:none;
+
+}
+
+.map-info{
+
+    margin-top:35px;
+
+}
+
+.map-info h3{
+
+    font-size:28px;
+
+    margin-bottom:15px;
+
+}
+
+.map-info p{
+
+    color:#ddd;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+/* =========================
+CHATBOT
+========================= */
+
+.chat-toggle{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:30px;
+
+    width:65px;
+    height:65px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#0EA5E9,#2563EB);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:30px;
+
+    cursor:pointer;
+
+    z-index:9999;
+
+    box-shadow:0 15px 35px rgba(14,165,233,.4);
+
+    transition:.3s;
+
+}
+
+.chat-toggle:hover{
+
+    transform:scale(1.1);
+
+}
+
+.chat-box{
+
+    position:fixed;
+
+    right:30px;
+
+    bottom:110px;
+
+    width:350px;
+
+    height:480px;
+
+    background:#071426;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    display:none;
+
+    flex-direction:column;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    z-index:9999;
+
+}
+
+.chat-header{
+
+    padding:18px;
+
+    background:linear-gradient(135deg,#0EA5E9,#2563EB);
+
+    font-weight:700;
+
+    font-size:20px;
+
+}
+
+.chat-body{
+
+    flex:1;
+
+    padding:15px;
+
+    overflow-y:auto;
+
+}
+
+.bot-msg{
+
+    background:#123456;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    margin-bottom:10px;
+
+    width:fit-content;
+
+}
+
+.user-msg{
+
+    background:#0EA5E9;
+
+    padding:12px;
+
+    border-radius:15px;
+
+    margin-bottom:10px;
+
+    margin-left:auto;
+
+    width:fit-content;
+
+}
+
+.chat-input{
+
+    display:flex;
+
+    padding:10px;
+
+    gap:10px;
+
+}
+
+.chat-input input{
+
+    flex:1;
+
+    padding:12px;
+
+    border:none;
+
+    border-radius:12px;
+
+    outline:none;
+
+}
+
+.chat-input button{
+
+    padding:12px 18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#0EA5E9;
+
+    color:white;
+
+    cursor:pointer;
+
+}
+
+/* =========================
+WHATSAPP
+========================= */
+
+.wa-button{
+
+    position:fixed;
+
+    left:25px;
+    bottom:30px;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:14px 22px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    font-size:17px;
+
+    box-shadow:0 10px 30px rgba(37,211,102,.45);
+
+    z-index:999;
+
+    transition:.35s;
+
+}
+
+.wa-button:hover{
+
+    transform:translateY(-5px) scale(1.05);
+
+    box-shadow:0 0 25px rgba(37,211,102,.8);
+
+}
+
+.wa-button i{
+
+    font-size:26px;
+
+}
+
+.wa-button:hover{
+
+    transform:scale(1.12);
+
+    box-shadow:0 0 30px rgba(37,211,102,.8);
+
+}
+
+/* =========================
+SCROLL TOP
+========================= */
+
+.scroll-top{
+
+    position:fixed;
+
+    right:110px;
+
+    bottom:30px;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#0EA5E9,#2563EB);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:28px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.35s;
+
+    box-shadow:0 12px 30px rgba(14,165,233,.4);
+
+    z-index:9999;
+
+}
+
+.scroll-top.show{
+
+    opacity:1;
+
+    visibility:visible;
+
+}
+
+.scroll-top:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.gallery-drive{
+    text-align:center;
+    margin-top:40px;
+}
+
+.gallery-drive p{
+    color:#d6d6d6;
+    margin-bottom:20px;
+    font-size:17px;
+}
+
+.drive-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:16px 35px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    color:#fff;
+
+    background:linear-gradient(135deg,#2563eb,#06b6d4);
+
+    box-shadow:0 0 25px rgba(37,99,235,.35);
+
+    transition:.35s;
+}
+
+.drive-btn:hover{
+    transform:translateY(-5px) scale(1.05);
+    box-shadow:0 0 35px rgba(37,99,235,.6);
+}
+
+
+
+/* =========================================
+RESPONSIVE TABLET
+========================================= */
+
+@media (max-width:992px){
+
+nav{
+    padding:15px 30px;
+}
+
+.hero-content h1{
+    font-size:52px;
+}
+
+.info-grid,
+.contact-grid{
+    grid-template-columns:repeat(2,1fr);
+}
+
+.gallery{
+    grid-template-columns:repeat(2,1fr);
+}
+
+}
+
+
+/* =========================================
+RESPONSIVE HP
+========================================= */
+
+@media (max-width:768px){
+
+nav{
+    padding:15px 20px;
+    flex-direction:column;
+    gap:15px;
+}
+
+.logo{
+    font-size:22px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+}
+
+nav ul li a{
+    padding:10px 18px;
+    font-size:14px;
+}
+
+.hero{
+    height:100vh;
+    padding:20px;
+}
+
+.hero-content{
+    max-width:100%;
+}
+
+.hero-content h1{
+    font-size:38px;
+    line-height:1.2;
+}
+
+.hero-content p{
+    font-size:16px;
+    line-height:1.7;
+}
+
+.btn{
+    display:block;
+    width:100%;
+    margin:10px auto;
+}
+
+.info-grid,
+.contact-grid,
+.gallery{
+    display:grid;
+    grid-template-columns:1fr;
+}
+
+.calendar{
+    width:100%;
+    overflow-x:auto;
+}
+
+.month{
+    flex-direction:column;
+    gap:15px;
+}
+
+.days div{
+    min-height:70px;
+}
+
+.map-box iframe{
+    height:300px;
+}
+
+.map-info{
+    text-align:center;
+}
+
+.wa-button{
+    left:15px;
+    bottom:15px;
+    padding:12px 18px;
+    font-size:14px;
+}
+
+.chat-toggle{
+    right:15px;
+    bottom:15px;
+}
+
+.chat-box{
+    width:95%;
+    right:2.5%;
+    bottom:80px;
+}
+
+footer{
+    text-align:center;
+    padding:30px 20px;
+}
+
+}
+
+
+/* =========================================
+HP KECIL
+========================================= */
+
+@media (max-width:480px){
+
+.hero-content h1{
+    font-size:30px;
+}
+
+.hero-content p{
+    font-size:15px;
+}
+
+.logo{
+    font-size:20px;
+}
+
+nav ul{
+    gap:8px;
+}
+
+nav ul li a{
+    padding:8px 14px;
+    font-size:13px;
+}
+
+.info-card,
+.contact-card{
+    padding:20px;
+}
+
+.days{
+    font-size:13px;
+}
+
+.big-text{
+    font-size:28px;
+}
+
+}
+
+
+/* ==========================
+HAMBURGER MENU
+========================== */
+
+.menu-toggle{
+
+    display:none;
+
+    font-size:32px;
+
+    color:#fff;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.menu-toggle:hover{
+
+    color:#38BDF8;
+
+}
+
+
+/* ==========================
+RESPONSIVE
+========================== */
+
+@media(max-width:768px){
+
+nav{
+
+    padding:15px 20px;
+
+}
+
+.menu-toggle{
+
+    display:block;
+
+}
+
+nav ul{
+
+    position:absolute;
+
+    top:80px;
+
+    left:0;
+
+    width:100%;
+
+    background:rgba(8,15,35,.95);
+
+    backdrop-filter:blur(15px);
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:25px 0;
+
+    display:none;
+
+}
+
+nav ul.active{
+
+    display:flex;
+
+}
+
+nav ul li a{
+
+    display:block;
+
+    width:220px;
+
+    text-align:center;
+
+}
+
+}
+
+/* =========================
+HAMBURGER PREMIUM
+========================= */
+
+.menu-toggle{
+    display:none;
+    width:35px;
+    height:28px;
+    cursor:pointer;
+    position:relative;
+    z-index:10001;
+}
+
+.menu-toggle span{
+    position:absolute;
+    width:100%;
+    height:4px;
+    background:#fff;
+    border-radius:10px;
+    transition:.35s;
+}
+
+.menu-toggle span:nth-child(1){
+    top:0;
+}
+
+.menu-toggle span:nth-child(2){
+    top:12px;
+}
+
+.menu-toggle span:nth-child(3){
+    top:24px;
+}
+
+/* berubah jadi X */
+
+.menu-toggle.active span:nth-child(1){
+    transform:rotate(45deg);
+    top:12px;
+}
+
+.menu-toggle.active span:nth-child(2){
+    opacity:0;
+}
+
+.menu-toggle.active span:nth-child(3){
+    transform:rotate(-45deg);
+    top:12px;
+}
+
