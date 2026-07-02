@@ -1581,4 +1581,124 @@ HAMBURGER MENU
 
 }
 
+/* =========================
+RESPONSIVE HP
+========================= */
 
+@media screen and (max-width:768px){
+
+html{
+    font-size:90%;
+}
+
+nav{
+    padding:12px 18px;
+}
+
+.logo{
+    font-size:22px;
+}
+
+.hero{
+    min-height:88vh;
+}
+
+.hero-content{
+    width:90%;
+}
+
+.hero-content h1{
+    font-size:48px;
+    line-height:55px;
+}
+
+.hero-content p{
+    font-size:17px;
+}
+
+.hero-content .btn{
+    padding:12px 22px;
+    font-size:15px;
+}
+
+/* INFO */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+}
+
+.info-card{
+    padding:15px;
+}
+
+.info-card h3{
+    font-size:15px;
+}
+
+.big-text{
+    font-size:26px;
+}
+
+/* KALENDER */
+
+.calendar{
+    width:100%;
+    max-width:380px;
+}
+
+.days div{
+    width:40px;
+    height:50px;
+    font-size:13px;
+}
+
+/* GALERI */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+}
+
+.gallery img{
+    height:160px;
+}
+
+/* MAP */
+
+.map-box iframe{
+    height:280px;
+}
+
+/* KONTAK */
+
+.contact-grid{
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+}
+
+.contact-card{
+    padding:20px;
+}
+
+/* TOMBOL */
+
+.wa-button{
+
+    left:15px;
+    bottom:18px;
+
+    transform:scale(.85);
+}
+
+.chat-toggle{
+
+    right:15px;
+    bottom:18px;
+
+    transform:scale(.9);
+}
+
+}
