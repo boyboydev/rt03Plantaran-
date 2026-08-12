@@ -17,6 +17,7 @@ body {
     color: #1f2937;
     background: #ffffff;
     line-height: 1.7;
+    overflow-x: hidden;
 }
 
 a {
@@ -269,6 +270,7 @@ img {
 
 .profil {
     max-width: 1000px;
+    width: 100%;
     margin: 0 auto;
 
     display: grid;
@@ -472,6 +474,7 @@ img {
 
 .announcement {
     max-width: 950px;
+    width: 100%;
     margin: auto;
 
     display: grid;
@@ -507,7 +510,6 @@ img {
     padding: 35px 38px;
 }
 
-
 .announcement-date {
     display: inline-block;
 
@@ -524,7 +526,6 @@ img {
     margin-bottom: 14px;
 }
 
-
 .announcement-content h3 {
     color: var(--dark);
 
@@ -533,7 +534,6 @@ img {
 
     margin-bottom: 14px;
 }
-
 
 .announcement-content p {
     color: #667085;
@@ -545,7 +545,6 @@ img {
 
     max-width: 520px;
 }
-
 
 .announcement-content .btn {
     margin-top: 12px;
@@ -683,7 +682,7 @@ img {
         ),
         url("https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=1000&q=80")
         center / cover;
-    
+
     display: grid;
     place-items: center;
 }
@@ -769,9 +768,16 @@ img {
         gap: 15px;
     }
 
-    .profil-grid {
+    /* DIPERBAIKI: sebelumnya .profil-grid */
+    .profil {
         grid-template-columns: 1fr;
         gap: 40px;
+    }
+
+    .profil-image {
+        max-width: 600px;
+        width: 100%;
+        margin: auto;
     }
 
     .kepala-desa {
@@ -794,6 +800,10 @@ img {
     .map-placeholder {
         min-height: 300px;
     }
+
+    .visi-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 
@@ -802,6 +812,10 @@ img {
 ================================================== */
 
 @media (max-width: 650px) {
+
+    .container {
+        width: 92%;
+    }
 
     .navbar {
         min-height: 65px;
@@ -830,6 +844,11 @@ img {
         display: flex;
     }
 
+
+    /* ==================================================
+       HERO HP
+    ================================================== */
+
     .hero {
         min-height: 550px;
     }
@@ -847,13 +866,70 @@ img {
         align-items: flex-start;
     }
 
+
+    /* ==================================================
+       SECTION HP
+    ================================================== */
+
     .section {
         padding: 65px 0;
+    }
+
+    .section-title {
+        margin-bottom: 35px;
     }
 
     .section-title h2 {
         font-size: 28px;
     }
+
+
+    /* ==================================================
+       PROFIL DESA HP
+    ================================================== */
+
+    .profil {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .profil-image {
+        width: 100%;
+        max-width: none;
+    }
+
+    .profil-image img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .profil-text {
+        width: 100%;
+    }
+
+    .profil-text h3 {
+        font-size: 23px;
+    }
+
+    .profil-text p {
+        font-size: 13px;
+    }
+
+
+    /* ==================================================
+       INFORMASI DESA HP
+    ================================================== */
+
+    .info-desa {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+
+    /* ==================================================
+       STATISTIK HP
+    ================================================== */
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -864,19 +940,78 @@ img {
         border-right: none;
     }
 
-    .service-grid,
-    .news-grid,
+    .stat-item strong {
+        font-size: 28px;
+    }
+
+
+    /* ==================================================
+       LAYANAN HP
+    ================================================== */
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ==================================================
+       PENGUMUMAN HP
+    ================================================== */
+
+    .announcement {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .announcement-image {
+        height: auto;
+    }
+
+    .announcement-image img {
+        width: 100%;
+        height: 220px;
+        min-height: 0;
+        object-fit: cover;
+    }
+
+    .announcement-content {
+        padding: 25px;
+    }
+
+    .announcement-content h3 {
+        font-size: 21px;
+    }
+
+
+    /* ==================================================
+       KONTAK HP
+    ================================================== */
+
     .contact-grid {
         grid-template-columns: 1fr;
     }
 
-    .kepala-desa img {
-        height: 380px;
+
+    /* ==================================================
+       MAP HP
+    ================================================== */
+
+    .map-box {
+        grid-template-columns: 1fr;
     }
 
     .map-info {
         padding: 30px 25px;
     }
+
+    .map-placeholder {
+        min-height: 280px;
+    }
+
+
+    /* ==================================================
+       FOOTER HP
+    ================================================== */
 
     .footer-content {
         flex-direction: column;
@@ -884,6 +1019,19 @@ img {
 
     .footer-links {
         gap: 12px;
+    }
+
+
+    /* ==================================================
+       VISI & MISI HP
+    ================================================== */
+
+    .visi-section {
+        padding: 60px 0;
+    }
+
+    .visi-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -959,19 +1107,4 @@ img {
     font-size: 13px;
 
     line-height: 1.75;
-}
-
-
-/* HP */
-
-@media (max-width: 650px) {
-
-    .visi-section {
-        padding: 60px 0;
-    }
-
-    .visi-grid {
-        grid-template-columns: 1fr;
-    }
-
 }
