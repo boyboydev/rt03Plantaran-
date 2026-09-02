@@ -1,543 +1,295 @@
-/* ===========================
-   NAVBAR SCROLL
-=========================== */
+// ==========================================
+// JAM DIGITAL REAL-TIME
+// ==========================================
 
-const nav = document.querySelector("nav");
+function updateClock() {
 
-window.addEventListener("scroll", () => {
+    const now = new Date();
 
-    if(window.scrollY > 80){
-        nav.classList.add("scrolled");
-    }else{
-        nav.classList.remove("scrolled");
-    }
+    const optionsTime = {
+        timeZone: "Asia/Jakarta",
+        hour: "2-digit",
+        minute: "2-digit",
+        second: "2-digit",
+        hour12: false
+    };
 
-});
+    const optionsDate = {
+        timeZone: "Asia/Jakarta",
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+    };
 
+    const time = new Intl.DateTimeFormat(
+        "id-ID",
+        optionsTime
+    ).format(now);
 
-/* ===========================
-   SCROLL ANIMATION
-=========================== */
+    const date = new Intl.DateTimeFormat(
+        "id-ID",
+        optionsDate
+    ).format(now);
 
-const observer = new IntersectionObserver((entries)=>{
+    document.getElementById("digital-clock").textContent =
+        time;
 
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-            entry.target.classList.add("show");
-        }
-
-    });
-
-},{
-    threshold:.2
-});
-
-document.querySelectorAll(".card,.gallery img,.contact-card").forEach(el=>{
-    observer.observe(el);
-});
-
-
-/* ===========================
-   PARTICLE BACKGROUND
-=========================== */
-
-const canvas = document.getElementById("particles");
-const ctx = canvas.getContext("2d");
-
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
-
-let particles = [];
-
-class Particle{
-
-    constructor(){
-
-        this.x = Math.random()*canvas.width;
-        this.y = Math.random()*canvas.height;
-
-        this.size=Math.random()*3+1;
-
-        this.speedX = (Math.random()-0.5)*0.4;
-        this.speedY = (Math.random()-0.5)*0.4;
-
-    }
-
-    update(){
-
-        this.x += this.speedX;
-        this.y += this.speedY;
-
-        if(this.x>canvas.width) this.x=0;
-        if(this.x<0) this.x=canvas.width;
-
-        if(this.y>canvas.height) this.y=0;
-        if(this.y<0) this.y=canvas.height;
-
-    }
-
-    draw(){
-
-        ctx.beginPath();
-        ctx.arc(this.x,this.y,this.size,0,Math.PI*2);
-
-        ctx.fillStyle="rgba(0,255,255,.7)";
-        ctx.shadowBlur=35;
-        ctx.shadowColor="#00ffff";
-        ctx.fill();
-
-    }
-
+    document.getElementById("digital-date").textContent =
+        date;
 }
-
-for(let i=0;i<130;i++){
-    particles.push(new Particle());
-}
-
-
-function connect(){
-
-    for(let a=0;a<particles.length;a++){
-
-        for(let b=a;b<particles.length;b++){
-
-            let dx = particles[a].x - particles[b].x;
-            let dy = particles[a].y - particles[b].y;
-
-            let distance = Math.sqrt(dx*dx + dy*dy);
-
-            if(distance < 130){
-
-                ctx.beginPath();
-
-                ctx.strokeStyle = "rgba(255,255,255,.08)";
-                ctx.lineWidth = 1;
-
-                ctx.moveTo(particles[a].x, particles[a].y);
-                ctx.lineTo(particles[b].x, particles[b].y);
-
-                ctx.stroke();
-
-            }
-
-        }
-
-    }
-
-}
-
-
-/* ===========================
-   LIGHTBOX GALERI
-=========================== */
-
-const images = document.querySelectorAll(".gallery img");
-
-images.forEach(img=>{
-
-    img.addEventListener("click",()=>{
-
-        const overlay=document.createElement("div");
-
-        overlay.style.position="fixed";
-        overlay.style.top="0";
-        overlay.style.left="0";
-        overlay.style.width="100%";
-        overlay.style.height="100%";
-        overlay.style.background="rgba(0,0,0,.9)";
-        overlay.style.display="flex";
-        overlay.style.alignItems="center";
-        overlay.style.justifyContent="center";
-        overlay.style.zIndex="9999";
-        overlay.style.cursor="pointer";
-
-        const photo=document.createElement("img");
-
-        photo.src=img.src;
-        photo.style.maxWidth="90%";
-        photo.style.maxHeight="90%";
-        photo.style.borderRadius="15px";
-        photo.style.boxShadow="0 0 40px rgba(0,255,255,.5)";
-
-        overlay.appendChild(photo);
-
-        document.body.appendChild(overlay);
-
-        overlay.onclick=()=>{
-
-            overlay.remove();
-
-        }
-
-    });
-
-});
-
-/* =====================
-KALENDER
-===================== */
-
-const monthYear=document.getElementById("month-year");
-const daysContainer=document.getElementById("calendar-days");
-const todayText=document.getElementById("today");
-
-const months=[
-"Januari","Februari","Maret","April","Mei","Juni",
-"Juli","Agustus","September","Oktober","November","Desember"
-];
-
-const weekdays=[
-"Minggu","Senin","Selasa","Rabu","Kamis","Jumat","Sabtu"
-];
-
-const pasaran = [
-    "Legi",
-    "Pahing",
-    "Pon",
-    "Wage",
-    "Kliwon"
-];
-
-let date=new Date();
-
-let currentMonth=date.getMonth();
-let currentYear=date.getFullYear();
-
-function renderCalendar(month,year){
-
-daysContainer.innerHTML="";
-
-monthYear.innerHTML=months[month]+" "+year;
-updateIslamicDate(month, year);
-
-const firstDay=new Date(year,month,1).getDay();
-
-const totalDays=new Date(year,month+1,0).getDate();
-
-for(let i=0;i<firstDay;i++){
-
-const empty=document.createElement("div");
-
-empty.classList.add("other-month");
-
-daysContainer.appendChild(empty);
-
-}
-
-for(let d=1;d<=totalDays;d++){
-
-const day = document.createElement("div");
-
-const current = new Date(year, month, d);
-
-day.classList.add("day");
-
-day.innerHTML = `
-    <div class="date-number">${d}</div>
-    <div class="pasaran">${getPasaran(current)}</div>
-`;
-
-if(
-
-d===new Date().getDate() &&
-
-month===new Date().getMonth() &&
-
-year===new Date().getFullYear()
-
-){
-
-day.classList.add("today");
-
-}
-
-daysContainer.appendChild(day);
-
-}
-
-}
-
-renderCalendar(currentMonth,currentYear);
-
-todayText.innerHTML=
-
-"Hari ini : "+
-
-weekdays[new Date().getDay()]+
-
-", "+
-
-new Date().getDate()+" "+
-
-months[new Date().getMonth()]+" "+
-
-new Date().getFullYear();
-
-
-document.getElementById("prev").onclick=()=>{
-
-currentMonth--;
-
-if(currentMonth<0){
-
-currentMonth=11;
-
-currentYear--;
-
-}
-
-renderCalendar(currentMonth,currentYear);
-
-}
-
-document.getElementById("next").onclick=()=>{
-
-currentMonth++;
-
-if(currentMonth>11){
-
-currentMonth=0;
-
-currentYear++;
-
-}
-
-
-
-renderCalendar(currentMonth,currentYear);
-
-}
-
-function updateIslamicDate(month, year){
-
-    const islamic = document.getElementById("islamic-date");
-
-    const selectedDate = new Date(year, month, 1);
-
-    const formatter = new Intl.DateTimeFormat(
-        "id-TN-u-ca-islamic",
-        {
-            month:"long",
-            year:"numeric"
-        }
-    );
-
-    let result = formatter.format(selectedDate);
-
-    result = result
-        .replace("Muharam","Sura")
-        .replace("Safar","Sapar")
-        .replace("Rabiulawal","Mulud")
-        .replace("Rabiul Akhir","Bakda Mulud")
-        .replace("Rabiulakhir","Bakda Mulud")
-        .replace("Jumadilawal","Jumadil Awal")
-        .replace("Jumadilakhir","Jumadil Akhir")
-        .replace("Rajab","Rejeb")
-        .replace("Syakban","Ruwah")
-        .replace("Ramadan","Pasa")
-        .replace("Syawal","Sawal")
-        .replace("Zulkaidah","Zulkaidah")
-        .replace("Zulhijah","Zulhijah");
-
-    islamic.innerHTML = result;
-
-}
-
-function getPasaran(date){
-
-    const pasaran = [
-        "Legi",
-        "Pahing",
-        "Pon",
-        "Wage",
-        "Kliwon"
-    ];
-
-    // Acuan: 2 Juli 2026 = Kliwon
-    const reference = new Date(2026, 6, 2); // Bulan Juli = 6
-    const referencePasaran = 4; // Kliwon
-
-    const diff = Math.floor((date - reference) / 86400000);
-
-    let index = (referencePasaran + diff) % 5;
-
-    if(index < 0){
-        index += 5;
-    }
-
-    return pasaran[index];
-
-}
-
-    
-
-/*====================
-JAM DIGITAL
-====================*/
-
-function updateClock(){
-
-const now=new Date();
-
-document.getElementById("clock").innerHTML=
-
-now.toLocaleTimeString("id-ID");
-
-}
-
-setInterval(updateClock,1000);
 
 updateClock();
 
-/*====================
-CUACA DESA BAYU
-====================*/
+setInterval(updateClock, 1000);
 
-fetch("https://api.open-meteo.com/v1/forecast?latitude=-8.16&longitude=114.20&current=temperature_2m,weather_code")
 
-.then(res=>res.json())
+// ==========================================
+// CUACA SONGGON
+// Open-Meteo API
+// ==========================================
 
-.then(data=>{
+async function fetchWeather() {
 
-document.getElementById("temperature").innerHTML=data.current.temperature_2m+"°C";
+    const temperature =
+        document.getElementById("weather-temp");
 
-let code=data.current.weather_code;
+    const description =
+        document.getElementById("weather-desc");
 
-let desc="";
+    const humidity =
+        document.getElementById("weather-humidity");
 
-let icon="☁️";
+    const wind =
+        document.getElementById("weather-wind");
 
-if(code==0){
+    const icon =
+        document.getElementById("weather-icon");
 
-desc="Cerah";
+    const refreshIcon =
+        document.getElementById("weather-refresh-icon");
 
-icon="☀️";
 
-}else if(code<=3){
+    refreshIcon.classList.add("fa-spin");
 
-desc="Berawan";
+    description.textContent =
+        "Mengambil data cuaca...";
 
-icon="⛅";
 
-}else if(code<=67){
+    try {
 
-desc="Hujan";
+        const url =
+            "https://api.open-meteo.com/v1/forecast" +
+            "?latitude=-8.2217" +
+            "&longitude=114.2185" +
+            "&current=temperature_2m,relative_humidity_2m,wind_speed_10m,weather_code" +
+            "&timezone=Asia%2FJakarta";
 
-icon="🌧";
 
-}else{
+        const response = await fetch(url);
 
-desc="Cuaca Berubah";
+        if (!response.ok) {
+            throw new Error("Gagal mengambil data");
+        }
 
-icon="🌥";
+        const data = await response.json();
 
-}
+        const current = data.current;
 
-document.getElementById("weather-icon").innerHTML=icon;
 
-document.getElementById("weather-desc").innerHTML=desc;
+        // Suhu
+        temperature.textContent =
+            Math.round(current.temperature_2m);
 
-});
 
-/*====================
-JADWAL SHOLAT
-====================*/
+        // Kelembapan
+        humidity.textContent =
+            current.relative_humidity_2m + "%";
 
-const today=new Date();
 
-const tanggal=today.getDate();
+        // Angin
+        wind.textContent =
+            Math.round(current.wind_speed_10m) + " km/h";
 
-const bulan=today.getMonth()+1;
 
-const tahun=today.getFullYear();
+        // Deskripsi cuaca
+        const weatherInfo =
+            getWeatherDescription(current.weather_code);
 
-fetch(`https://api.aladhan.com/v1/timingsByCity/${tanggal}-${bulan}-${tahun}?city=Banyuwangi&country=Indonesia&method=11`)
+        description.textContent =
+            weatherInfo.description;
 
-.then(res=>res.json())
 
-.then(data=>{
-
-const t=data.data.timings;
-
-document.getElementById("subuh").innerHTML=t.Fajr;
-
-document.getElementById("dzuhur").innerHTML=t.Dhuhr;
-
-document.getElementById("ashar").innerHTML=t.Asr;
-
-document.getElementById("maghrib").innerHTML=t.Maghrib;
-
-document.getElementById("isya").innerHTML=t.Isha;
-
-});
-
-VANTA.NET({
-    el: ".background-3d",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200,
-    minWidth: 200,
-    color: 0x00e5ff,
-    backgroundColor: 0x020817,
-    points: 12,
-    maxDistance: 20,
-    spacing: 18
-});
-
-/*====================
-SCROLL TOP
-====================*/
-
-const scrollBtn=document.getElementById("scrollTop");
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY>400){
-
-        scrollBtn.classList.add("show");
-
-    }else{
-
-        scrollBtn.classList.remove("show");
+        // Icon
+        icon.innerHTML =
+            `<i class="${weatherInfo.icon}"></i>`;
 
     }
 
-});
+    catch (error) {
 
-scrollBtn.onclick=()=>{
+        console.error(error);
 
-    window.scrollTo({
+        temperature.textContent = "--";
 
-        top:0,
+        humidity.textContent = "--%";
 
-        behavior:"smooth"
+        wind.textContent = "-- km/h";
+
+        description.textContent =
+            "Gagal mengambil data cuaca";
+
+        icon.innerHTML =
+            '<i class="fa-solid fa-cloud-exclamation"></i>';
+
+    }
+
+    finally {
+
+        refreshIcon.classList.remove("fa-spin");
+
+    }
+}
+
+
+// ==========================================
+// KODE CUACA OPEN-METEO
+// ==========================================
+
+function getWeatherDescription(code) {
+
+    if (code === 0) {
+
+        return {
+            description: "Cerah",
+            icon: "fa-solid fa-sun"
+        };
+
+    }
+
+    if (code === 1 || code === 2) {
+
+        return {
+            description: "Cerah Berawan",
+            icon: "fa-solid fa-cloud-sun"
+        };
+
+    }
+
+    if (code === 3) {
+
+        return {
+            description: "Berawan",
+            icon: "fa-solid fa-cloud"
+        };
+
+    }
+
+    if (
+        code === 45 ||
+        code === 48
+    ) {
+
+        return {
+            description: "Berkabut",
+            icon: "fa-solid fa-smog"
+        };
+
+    }
+
+    if (
+        code >= 51 &&
+        code <= 57
+    ) {
+
+        return {
+            description: "Gerimis",
+            icon: "fa-solid fa-cloud-rain"
+        };
+
+    }
+
+    if (
+        code >= 61 &&
+        code <= 67
+    ) {
+
+        return {
+            description: "Hujan",
+            icon: "fa-solid fa-cloud-showers-heavy"
+        };
+
+    }
+
+    if (
+        code >= 71 &&
+        code <= 77
+    ) {
+
+        return {
+            description: "Salju",
+            icon: "fa-solid fa-snowflake"
+        };
+
+    }
+
+    if (
+        code >= 80 &&
+        code <= 82
+    ) {
+
+        return {
+            description: "Hujan Deras",
+            icon: "fa-solid fa-cloud-showers-heavy"
+        };
+
+    }
+
+    if (
+        code >= 95 &&
+        code <= 99
+    ) {
+
+        return {
+            description: "Badai Petir",
+            icon: "fa-solid fa-cloud-bolt"
+        };
+
+    }
+
+
+    return {
+        description: "Tidak diketahui",
+        icon: "fa-solid fa-cloud"
+    };
+}
+
+
+// Jalankan cuaca saat halaman dibuka
+fetchWeather();
+
+
+// ==========================================
+// SMOOTH SCROLL
+// ==========================================
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", function (event) {
+
+        const target =
+            document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+
+            event.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth"
+            });
+
+        }
 
     });
-
-};
-
-/* ==========================
-HAMBURGER MENU
-========================== */
-
-const menuToggle=document.getElementById("menuToggle");
-
-const navMenu=document.getElementById("navMenu");
-
-menuToggle.onclick=()=>{
-
-    navMenu.classList.toggle("active");
-
-}
-
-document.querySelectorAll("#navMenu a").forEach(link=>{
-
-    link.onclick=()=>{
-
-        navMenu.classList.remove("active");
-
-    }
 
 });
