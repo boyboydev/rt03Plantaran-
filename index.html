@@ -4,222 +4,302 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description" content="Website Resmi Desa Sukamaju">
+    <title>RT 03 RW 01 - Dusun Plantaran</title>
 
-    <title>RT 03 | Desa Bayu</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="stylesheet" href="style.css">
-
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .glass {
+            background: rgba(15, 23, 42, 0.88);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .pattern {
+            background-image:
+                radial-gradient(
+                    rgba(16, 185, 129, 0.08) 1.5px,
+                    transparent 1.5px
+                );
+            background-size: 20px 20px;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #059669;
+            border-radius: 999px;
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-slate-50 text-slate-800 pattern">
 
-<!-- ================= NAVBAR ================= -->
+<!-- ================= HEADER ================= -->
+<header class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
 
-<header class="header">
-    <div class="container navbar">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex items-center justify-between h-20">
 
-        <a href="#beranda" class="logo">
-            <div class="logo-icon">🏡</div>
+            <div class="flex items-center gap-3">
 
-            <div>
-                <strong>DESA BAYU DUSUN PLANTARAN</strong>
-                <span>Website Resmi RT 03</span>
-            </div>
-        </a>
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-emerald-600 to-teal-500 flex items-center justify-center text-white shadow-lg">
+                    <i class="fa-solid fa-house-chimney-flag"></i>
+                </div>
 
-        <nav class="nav-menu">
-            <a href="#beranda">Beranda</a>
-            <a href="#profil">Profil RT</a>
-            <a href="#pengumuman">Pengumuman</a>
-            <a href="#kontak">Kontak</a>
-        </nav>
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider
+                                 text-emerald-700 bg-emerald-50 px-2 py-1 rounded">
+                        Portal Resmi Warga
+                    </span>
 
-        <button class="menu-toggle" onclick="toggleMenu()">
-            ☰
-        </button>
+                    <h1 class="font-extrabold text-slate-900">
+                        RT 03 RW 01
+                    </h1>
 
-    </div>
-</header>
-
-
-<!-- ================= HERO ================= -->
-
-<section id="beranda" class="hero">
-
-    <div class="hero-overlay"></div>
-
-    <div class="container hero-content">
-
-        <span class="hero-label">
-            WEBSITE RESMI RT03 DESA BAYU DUSUN PLANTARAN
-        </span>
-
-        <h1>Desa Bayu</h1>
-
-        <p>
-            Bersama membangun desa yang maju,
-            mandiri, aman, dan sejahtera.
-        </p>
-
-        <div class="hero-buttons">
-
-            <a href="#profil" class="btn btn-primary">
-                Profil Desa
-            </a>
-
-            <a href="#kontak" class="btn btn-outline">
-                Hubungi Kami
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= PROFIL ================= -->
-
-<section id="profil" class="section">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span>PROFIL DESA</span>
-
-            <h2>Tentang Desa Bayu</h2>
-
-        </div>
-
-
-        <div class="profil">
-
-            <div class="profil-image">
-
-                <img
-                    src="jpg.jpg"
-                >
-
-            </div>
-
-
-            <div class="profil-text">
-
-                <h3>Desa Bayu Dusun Plantaran</h3>
-
-                <p>
-                    Desa Bayu Dusun Plantaran merupakan salah satu desa yang
-                    terus berupaya meningkatkan pelayanan dan
-                    kesejahteraan masyarakat.
-                </p>
-
-                <p>
-                    Dengan semangat gotong royong dan kebersamaan,
-                    Pemerintah Desa bersama masyarakat berkomitmen
-                    membangun desa yang lebih maju, mandiri,
-                    dan sejahtera.
-                </p>
-
-                <div class="info-desa">
-
-                    <div>
-                        <span>Kecamatan</span>
-                        <strong>SONGGON</strong>
-                    </div>
-
-                    <div>
-                        <span>Kabupaten</span>
-                        <strong>BANYUWANGI</strong>
-                    </div>
-
-                    <div>
-                        <span>Provinsi</span>
-                        <strong>Jawa Timur</strong>
-                    </div>
-
+                    <p class="text-xs text-slate-500">
+                        Dusun Plantaran, Desa Bayu
+                    </p>
                 </div>
 
             </div>
 
-        </div>
+            <nav class="hidden md:flex items-center gap-2 text-sm font-semibold">
 
+                <a href="#home"
+                   class="px-4 py-2 rounded-xl hover:bg-emerald-50 hover:text-emerald-600">
+                    Beranda
+                </a>
+
+                <a href="#pengumuman"
+                   class="px-4 py-2 rounded-xl hover:bg-emerald-50 hover:text-emerald-600">
+                    Pengumuman
+                </a>
+
+                <a href="#kontak"
+                   class="px-4 py-2 rounded-xl bg-emerald-600 text-white hover:bg-emerald-700">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    Kontak WA
+                </a>
+
+            </nav>
+
+            <a href="#kontak"
+               class="md:hidden px-3 py-2 rounded-xl bg-emerald-600 text-white text-xs font-bold">
+                <i class="fa-brands fa-whatsapp"></i>
+                Kontak
+            </a>
+
+        </div>
     </div>
 
-</section>
+</header>
 
-<!-- ================= VISI MISI ================= -->
 
-<section class="visi-section">
+<!-- ================= HERO ================= -->
+<section id="home" class="relative py-8 overflow-hidden">
 
-    <div class="container">
+    <div class="absolute inset-x-0 top-0 h-96
+                bg-gradient-to-b from-slate-900 via-emerald-950 to-slate-900
+                rounded-b-[2.5rem] -z-10">
+    </div>
 
-        <div class="section-title">
+    <div class="max-w-6xl mx-auto px-4">
 
-            <span>PEMERINTAHAN DESA</span>
+        <div class="text-center text-white py-6">
 
-            <h2>Visi & Misi Desa</h2>
+            <span class="inline-flex items-center gap-2
+                         px-4 py-2 rounded-full
+                         bg-white/10 border border-white/20
+                         text-emerald-300 text-xs font-semibold">
 
-            <p>
-                Bersama membangun Desa Bayu yang lebih baik.
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Sistem Informasi Terpadu Warga RT 03
+
+            </span>
+
+            <h2 class="text-3xl md:text-5xl font-extrabold mt-4">
+                Website Informasi RT 03 RW 01
+            </h2>
+
+            <p class="mt-3 text-sm md:text-base text-emerald-100">
+                Dusun Plantaran, Desa Bayu, Kecamatan Songgon,
+                Kabupaten Banyuwangi
             </p>
 
         </div>
 
 
-        <div class="visi-grid">
+        <!-- WIDGET -->
+        <div class="grid md:grid-cols-2 gap-6 mt-4">
 
-            <div class="visi-card">
+            <!-- JAM -->
+            <div class="glass rounded-3xl p-6 text-white shadow-2xl">
 
-                <div class="visi-icon">
-                    🌱
+                <div class="flex justify-between items-center
+                            border-b border-white/10 pb-4 mb-5">
+
+                    <div class="flex items-center gap-2">
+
+                        <i class="fa-regular fa-clock text-emerald-400"></i>
+
+                        <span class="text-xs font-bold uppercase tracking-wider">
+                            Jam Digital Real-time
+                        </span>
+
+                    </div>
+
+                    <span class="text-xs bg-emerald-500/20
+                                 text-emerald-300 px-3 py-1 rounded-full">
+                        WIB
+                    </span>
+
                 </div>
 
-                <h3>Visi Desa</h3>
+                <div class="text-center py-4">
 
-                <p>
-                    Mewujudkan Desa Bayu yang maju,
-                    mandiri, aman, nyaman, dan sejahtera
-                    dengan mengedepankan semangat gotong royong.
-                </p>
+                    <div id="digital-clock"
+                         class="text-5xl md:text-6xl font-black tracking-widest font-mono">
+                        00:00:00
+                    </div>
+
+                    <div id="digital-date"
+                         class="mt-3 text-sm text-emerald-200">
+                        Memuat tanggal...
+                    </div>
+
+                </div>
+
+                <div class="border-t border-white/10 pt-4
+                            flex justify-between text-xs text-slate-400">
+
+                    <span>
+                        <i class="fa-solid fa-earth-asia text-emerald-400"></i>
+                        Waktu Indonesia Barat
+                    </span>
+
+                    <span class="text-emerald-400 font-bold">
+                        ● LIVE
+                    </span>
+
+                </div>
 
             </div>
 
 
-            <div class="visi-card">
+            <!-- CUACA -->
+            <div class="glass rounded-3xl p-6 text-white shadow-2xl">
 
-                <div class="visi-icon">
-                    🤝
+                <div class="flex justify-between items-center
+                            border-b border-white/10 pb-4 mb-5">
+
+                    <div class="flex items-center gap-2">
+
+                        <i class="fa-solid fa-cloud-sun text-teal-400"></i>
+
+                        <span class="text-xs font-bold uppercase tracking-wider">
+                            Cuaca Songgon
+                        </span>
+
+                    </div>
+
+                    <button onclick="fetchWeather()"
+                            class="text-xs bg-white/10 px-3 py-1.5 rounded-lg hover:bg-white/20">
+
+                        <i class="fa-solid fa-rotate-right"
+                           id="weather-refresh-icon"></i>
+
+                        Refresh
+
+                    </button>
+
                 </div>
 
-                <h3>Misi Desa</h3>
+                <div class="flex items-center justify-between py-4">
 
-                <p>
-                    Meningkatkan pelayanan kepada masyarakat,
-                    mengembangkan potensi desa, serta menciptakan
-                    pembangunan yang transparan dan berkelanjutan.
-                </p>
+                    <div>
 
-            </div>
+                        <div class="flex items-baseline">
 
+                            <span id="weather-temp"
+                                  class="text-5xl font-black">
+                                --
+                            </span>
 
-            <div class="visi-card">
+                            <span class="text-2xl text-teal-200 ml-2">
+                                °C
+                            </span>
 
-                <div class="visi-icon">
-                    🏡
+                        </div>
+
+                        <div id="weather-desc"
+                             class="text-sm font-bold text-emerald-300 mt-2">
+                            Memuat cuaca...
+                        </div>
+
+                        <p class="text-xs text-slate-400 mt-1">
+                            <i class="fa-solid fa-location-dot text-rose-400"></i>
+                            Dusun Plantaran, Songgon
+                        </p>
+
+                    </div>
+
+                    <div id="weather-icon"
+                         class="text-6xl text-amber-300">
+                        <i class="fa-solid fa-sun"></i>
+                    </div>
+
                 </div>
 
-                <h3>Komitmen Desa</h3>
+                <div class="border-t border-white/10 pt-4
+                            grid grid-cols-2 gap-3 text-xs">
 
-                <p>
-                    Pemerintah Desa bersama masyarakat berkomitmen
-                    membangun lingkungan yang harmonis, produktif,
-                    dan sejahtera.
-                </p>
+                    <div class="bg-white/5 p-3 rounded-xl">
+
+                        <i class="fa-solid fa-droplet text-blue-400"></i>
+
+                        Kelembapan:
+
+                        <strong id="weather-humidity">
+                            --%
+                        </strong>
+
+                    </div>
+
+                    <div class="bg-white/5 p-3 rounded-xl">
+
+                        <i class="fa-solid fa-wind text-teal-300"></i>
+
+                        Angin:
+
+                        <strong id="weather-wind">
+                            -- km/h
+                        </strong>
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -231,62 +311,113 @@
 
 
 <!-- ================= PENGUMUMAN ================= -->
+<section id="pengumuman"
+         class="py-14 bg-slate-100 border-y border-slate-200">
 
-<section id="pengumuman" class="section section-light">
+    <div class="max-w-4xl mx-auto px-4">
 
-    <div class="container">
+        <div class="mb-7">
 
-        <div class="section-title">
+            <span class="inline-flex items-center gap-2
+                         text-xs font-bold uppercase
+                         text-emerald-800 bg-emerald-100
+                         px-3 py-1 rounded-full">
 
-            <span>INFORMASI </span>
+                <i class="fa-solid fa-bullhorn"></i>
 
-            <h2>Pengumuman</h2>
+                Papan Resmi Warga
 
-            <p>
-                Informasi dan pengumuman terbaru dari Wilayah RT 03.
+            </span>
+
+            <h2 class="text-3xl font-extrabold mt-3">
+                Papan Pengumuman RT 03
+            </h2>
+
+            <p class="text-sm text-slate-600 mt-1">
+                Informasi resmi dari pengurus RT 03 RW 01.
             </p>
 
         </div>
 
 
-        <!-- CUKUP SATU PENGUMUMAN -->
+        <!-- ACTIVE -->
+        <div id="active-announcement"
+             class="bg-white rounded-3xl border border-slate-200
+                    shadow-xl p-6 md:p-8">
 
-        <div class="announcement">
+            <div class="flex flex-wrap justify-between gap-3
+                        border-b border-slate-100 pb-4 mb-5">
 
-            <div class="announcement-image">
+                <span class="px-3 py-1 text-xs font-bold
+                             rounded-full bg-rose-100
+                             text-rose-700">
 
-                <img
-                    src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=900&q=80"
-                    alt="Pengumuman Desa"
-                >
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    PENTING / EDARAN
 
-            </div>
-
-
-            <div class="announcement-content">
-
-                <span class="announcement-date">
-                    📅 12 Agustus 2026
                 </span>
 
-                <h3>
-                    Pengumuman Kegiatan RT03
-                </h3>
+                <span class="text-xs text-slate-500">
 
-                <p>
-                    masih belum ada pengumuman terbaru dari RT03 Silakan cek kembali nanti.
-                </p>
+                    <i class="fa-regular fa-calendar-check text-emerald-600"></i>
 
-                <p>
-                    Untuk informasi lebih lanjut, silakan
-                    menghubungi perangkat desa
-                </p>
+                    <span id="ann-date">
+                        --
+                    </span>
 
-                <a href="#kontak" class="btn btn-primary">
-                    Hubungi Desa
-                </a>
+                </span>
 
             </div>
+
+            <h3 id="ann-title"
+                class="text-2xl font-extrabold text-slate-900 mb-4">
+                Kerja Bakti Lingkungan RT 03
+            </h3>
+
+            <div id="ann-content"
+                 class="bg-slate-50 border border-slate-200
+                        rounded-2xl p-5 text-sm
+                        leading-relaxed">
+
+                Diharapkan seluruh warga RT 03 RW 01
+                dapat mengikuti kegiatan kerja bakti lingkungan
+                demi menjaga kebersihan dan kenyamanan bersama.
+
+            </div>
+
+            <div class="mt-6 pt-4 border-t border-slate-100
+                        text-xs text-slate-500">
+
+                <i class="fa-solid fa-user-shield text-emerald-600"></i>
+
+                Diterbitkan oleh:
+                <strong class="text-slate-800">
+                    Pengurus RT 03 RW 01
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- EMPTY -->
+        <div id="empty-announcement"
+             class="hidden bg-white rounded-3xl
+                    border border-dashed border-slate-300
+                    p-10 text-center">
+
+            <i class="fa-solid fa-clipboard-check
+                      text-emerald-600 text-4xl mb-4">
+            </i>
+
+            <h3 class="font-bold text-lg">
+                Belum ada pengumuman terbaru.
+            </h3>
+
+            <p class="text-sm text-slate-500 mt-2">
+                Pengumuman baru akan ditampilkan
+                jika ada edaran dari pengurus.
+            </p>
 
         </div>
 
@@ -296,159 +427,194 @@
 
 
 <!-- ================= KONTAK ================= -->
+<section id="kontak" class="py-16 bg-white">
 
-<section id="kontak" class="contact-section">
+    <div class="max-w-6xl mx-auto px-4">
 
-    <div class="container">
+        <div class="mb-10">
 
-        <div class="section-title white">
+            <span class="inline-flex items-center gap-2
+                         text-xs font-bold uppercase
+                         text-emerald-800 bg-emerald-50
+                         px-3 py-1 rounded-full">
 
-            <span>HUBUNGI KAMI</span>
+                <i class="fa-brands fa-whatsapp"></i>
 
-            <h2>Kontak Desa</h2>
+                Layanan Komunikasi Warga
 
-            <p>
-                Hubungi perangkat Desa Bayu melalui WhatsApp.
+            </span>
+
+            <h2 class="text-3xl md:text-4xl
+                       font-extrabold mt-3">
+                Kontak Direct WhatsApp
+            </h2>
+
+            <p class="text-sm text-slate-600 mt-2">
+                Hubungi pengurus wilayah melalui WhatsApp.
             </p>
 
         </div>
 
 
-        <div class="contact-grid">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
 
-            <!-- WHATSAPP 1 -->
 
-            <a
-                class="contact-card"
-                href="https://wa.me/6285748655257"
-                target="_blank"
-            >
+            <!-- KEPALA DESA -->
+            <div class="border border-slate-200
+                        rounded-3xl p-6 shadow-sm
+                        hover:shadow-lg transition">
 
-                <div class="contact-icon">
-                    💬
+                <div class="w-12 h-12 rounded-2xl
+                            bg-emerald-100 text-emerald-600
+                            flex items-center justify-center mb-4">
+
+                    <i class="fa-solid fa-user-tie text-xl"></i>
+
                 </div>
 
-                <div>
-                    <span>Kepala Desa</span>
-                    <strong>WhatsApp</strong>
-                    <small>0857-4865-5257</small>
-                </div>
-
-            </a>
-
-
-            <!-- WHATSAPP 2 -->
-
-            <a
-                class="contact-card"
-                href="https://wa.me/6282337166979"
-                target="_blank"
-            >
-
-                <div class="contact-icon">
-                    💬
-                </div>
-
-                <div>
-                    <span>Kepala Dusun</span>
-                    <strong>WhatsApp</strong>
-                    <small>0823-3716-6979</small>
-                </div>
-
-            </a>
-
-
-            <!-- WHATSAPP 3 -->
-
-            <a
-                class="contact-card"
-                href="https://wa.me/6285748856764"
-                target="_blank"
-            >
-
-                <div class="contact-icon">
-                    💬
-                </div>
-
-                <div>
-                    <span>Ketua RW 01</span>
-                    <strong>WhatsApp</strong>
-                    <small>0857-4885-6764</small>
-                </div>
-
-            </a>
-
-
-            <!-- WHATSAPP 4 -->
-
-            <a
-                class="contact-card"
-                href="https://wa.me/6285718754157"
-                target="_blank"
-            >
-
-                <div class="contact-icon">
-                    💬
-                </div>
-
-                <div>
-                    <span>Ketua RT 03</span>
-                    <strong>WhatsApp</strong>
-                    <small>0857-1875-4157</small>
-                </div>
-
-            </a>
-
-        </div>
-
-
-        <!-- GOOGLE MAPS -->
-
-        <div class="map-box">
-
-            <div class="map-info">
-
-                <span>📍 LOKASI KANTOR DESA</span>
-
-                <h3>
-                    Kantor Desa Bayu Dusun Plantaran
+                <h3 class="font-bold">
+                    Kepala Desa
                 </h3>
 
-                <p>
-                    Jl. Perkebunan Bumisari Desa Bayu
-                    kecamatan Songgon, Kabupaten Banyuwangi,
-                    Provinsi Jawa Timur, Indonesia.
+                <p class="text-xs text-slate-500 mt-1 mb-5">
+                    Pemerintah Desa Bayu
                 </p>
 
-             <a
-              href="https://www.google.com/maps/search/?api=1&query=Balai+Desa+Bayu%2C+Jalan+Bumi+Sari+No.+11%2C+Dusun+Plantaran%2C+Desa+Bayu%2C+Songgon%2C+Banyuwangi"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-map"
-            >
-             📍 Buka Google Maps
-</a>
+                <a href="https://wa.me/6281234567890"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="block text-center
+                          bg-emerald-600
+                          hover:bg-emerald-700
+                          text-white py-2.5
+                          rounded-xl text-sm font-bold">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+
+                </a>
 
             </div>
 
 
-            <div class="map-placeholder">
+            <!-- KEPALA DUSUN -->
+            <div class="border border-slate-200
+                        rounded-3xl p-6 shadow-sm
+                        hover:shadow-lg transition">
 
-                <div>
-                    <span>📍</span>
+                <div class="w-12 h-12 rounded-2xl
+                            bg-blue-100 text-blue-600
+                            flex items-center justify-center mb-4">
 
-                    <p>
-                        Lokasi Kantor Desa
-                    </p>
+                    <i class="fa-solid fa-people-roof text-xl"></i>
 
-                    <small>
-                        Klik tombol untuk membuka Google Maps
-                    </small>
                 </div>
+
+                <h3 class="font-bold">
+                    Kepala Dusun
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1 mb-5">
+                    Dusun Plantaran
+                </p>
+
+                <a href="https://wa.me/6281234567890"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="block text-center
+                          bg-emerald-600
+                          hover:bg-emerald-700
+                          text-white py-2.5
+                          rounded-xl text-sm font-bold">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+
+                </a>
+
+            </div>
+
+
+            <!-- KETUA RW -->
+            <div class="border border-slate-200
+                        rounded-3xl p-6 shadow-sm
+                        hover:shadow-lg transition">
+
+                <div class="w-12 h-12 rounded-2xl
+                            bg-purple-100 text-purple-600
+                            flex items-center justify-center mb-4">
+
+                    <i class="fa-solid fa-users text-xl"></i>
+
+                </div>
+
+                <h3 class="font-bold">
+                    Ketua RW
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1 mb-5">
+                    RW 01
+                </p>
+
+                <a href="https://wa.me/6281234567890"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="block text-center
+                          bg-emerald-600
+                          hover:bg-emerald-700
+                          text-white py-2.5
+                          rounded-xl text-sm font-bold">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+
+                </a>
+
+            </div>
+
+
+            <!-- KETUA RT -->
+            <div class="border border-slate-200
+                        rounded-3xl p-6 shadow-sm
+                        hover:shadow-lg transition">
+
+                <div class="w-12 h-12 rounded-2xl
+                            bg-orange-100 text-orange-600
+                            flex items-center justify-center mb-4">
+
+                    <i class="fa-solid fa-house-user text-xl"></i>
+
+                </div>
+
+                <h3 class="font-bold">
+                    Ketua RT
+                </h3>
+
+                <p class="text-xs text-slate-500 mt-1 mb-5">
+                    RT 03 RW 01
+                </p>
+
+                <a href="https://wa.me/6281234567890"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="block text-center
+                          bg-emerald-600
+                          hover:bg-emerald-700
+                          text-white py-2.5
+                          rounded-xl text-sm font-bold">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+                    WhatsApp
+
+                </a>
 
             </div>
 
         </div>
+
+        <p class="text-center text-xs text-slate-400 mt-8">
+            * Ganti nomor WhatsApp contoh dengan nomor pengurus yang sebenarnya.
+        </p>
 
     </div>
 
@@ -456,62 +622,34 @@
 
 
 <!-- ================= FOOTER ================= -->
+<footer class="bg-slate-900 text-white py-8">
 
-<footer class="footer">
+    <div class="max-w-6xl mx-auto px-4 text-center">
 
-    <div class="container footer-content">
-
-        <div>
-
-            <h3>
-                Desa Bayu Dusun Plantaran
-            </h3>
-
-            <p>
-                Website resmi Rt 03 Rw 01 Desa Bayu Dusun Plantaran
-            </p>
-
+        <div class="text-emerald-400 text-2xl mb-2">
+            <i class="fa-solid fa-house-chimney-flag"></i>
         </div>
 
+        <h3 class="font-bold">
+            RT 03 RW 01
+        </h3>
 
-    </div>
+        <p class="text-xs text-slate-400 mt-1">
+            Dusun Plantaran, Desa Bayu, Kecamatan Songgon,
+            Kabupaten Banyuwangi
+        </p>
 
-
-    <div class="copyright">
-
-        © 2026 Rt 03 Rw 01 Desa Bayu Dusun Plantaran.
-        All Rights Reserved.
+        <p class="text-xs text-slate-500 mt-5">
+            © 2026 RT 03 RW 01. Semua hak dilindungi.
+        </p>
 
     </div>
 
 </footer>
 
 
-<!-- ================= JAVASCRIPT ================= -->
-
-<script>
-
-function toggleMenu() {
-
-    const menu = document.querySelector('.nav-menu');
-
-    menu.classList.toggle('active');
-
-}
-
-document.querySelectorAll('.nav-menu a').forEach(link => {
-
-    link.addEventListener('click', () => {
-
-        document
-            .querySelector('.nav-menu')
-            .classList.remove('active');
-
-    });
-
-});
-
-</script>
+<!-- JavaScript -->
+<script src="script.js"></script>
 
 </body>
 </html>
